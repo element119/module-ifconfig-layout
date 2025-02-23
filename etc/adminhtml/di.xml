@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Backend\Model\View\Layout\Reader\Block"
+                type="Element119\IfConfigLayout\Preference\BlockLayoutReader"/>
+
+    <type name="Element119\IfConfigLayout\Preference\BlockLayoutReader">
+        <arguments>
+            <argument name="blockAttributes" xsi:type="array">
+                <item name="aclResource" xsi:type="const">Magento\Framework\View\Layout\Reader\Block::ATTRIBUTE_ACL</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

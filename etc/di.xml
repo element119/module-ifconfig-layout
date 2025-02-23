@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Framework\View\Layout\Reader\Block"
+                type="Element119\IfConfigLayout\Preference\BlockLayoutReader"/>
+    <preference for="Magento\Framework\View\Layout\Reader\Container"
+                type="Element119\IfConfigLayout\Preference\ContainerLayoutReader"/>
+
+    <type name="Magento\Framework\Config\Dom\UrnResolver">
+        <plugin name="replace_layout_merged_xsd"
+                type="Element119\IfConfigLayout\Plugin\ReplaceLayoutMergedXsd"/>
+    </type>
+
+    <type name="Element119\IfConfigLayout\Preference\BlockLayoutReader">
+        <arguments>
+            <argument name="blockAttributes" xsi:type="array">
+                <item name="class" xsi:type="const">Magento\Framework\View\Layout\Reader\Block::ATTRIBUTE_CLASS</item>
+                <item name="display" xsi:type="const">Magento\Framework\View\Layout\Reader\Block::ATTRIBUTE_DISPLAY</item>
+                <item name="group" xsi:type="const">Magento\Framework\View\Layout\Reader\Block::ATTRIBUTE_GROUP</item>
+                <item name="ifconfig" xsi:type="const">Element119\IfConfigLayout\Model\IfConfig::LAYOUT_ATTRIBUTE_IFCONFIG</item>
+                <item name="template" xsi:type="const">Magento\Framework\View\Layout\Reader\Block::ATTRIBUTE_TEMPLATE</item>
+                <item name="ttl" xsi:type="const">Magento\Framework\View\Layout\Reader\Block::ATTRIBUTE_TTL</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Element119\IfConfigLayout\Preference\ContainerLayoutReader">
+        <arguments>
+            <argument name="containerAttributes" xsi:type="array">
+                <item name="display" xsi:type="const">Magento\Framework\View\Layout\Reader\Container::CONTAINER_OPT_DISPLAY</item>
+                <item name="htmlClass" xsi:type="const">Magento\Framework\View\Layout\Reader\Container::CONTAINER_OPT_HTML_CLASS</item>
+                <item name="htmlId" xsi:type="const">Magento\Framework\View\Layout\Reader\Container::CONTAINER_OPT_HTML_ID</item>
+                <item name="htmlTag" xsi:type="const">Magento\Framework\View\Layout\Reader\Container::CONTAINER_OPT_HTML_TAG</item>
+                <item name="ifconfig" xsi:type="const">Element119\IfConfigLayout\Model\IfConfig::LAYOUT_ATTRIBUTE_IFCONFIG</item>
+                <item name="label" xsi:type="const">Magento\Framework\View\Layout\Reader\Container::CONTAINER_OPT_LABEL</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

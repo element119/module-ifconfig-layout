@@ -1,0 +1,24 @@
+{
+    "name": "element119/module-ifconfig-layout",
+    "type": "magento2-module",
+    "description": "A Magento 2 module to enable developers to use the ifconfig layout directive for containers and reference entities.",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "element119",
+            "email": "hello@element119.co.uk"
+        }
+    ],
+    "require": {
+        "magento/framework": "*",
+        "php": "^7.4 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Element119\\IfConfigLayout\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

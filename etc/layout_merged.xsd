@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="urn:magento:framework:View/Layout/etc/layout_merged.xsd"/>
+    <xs:include schemaLocation="urn:magento:module:Element119_IfConfigLayout:etc/elements.xsd"/>
+</xs:schema>

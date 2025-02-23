@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © element119. All rights reserved.
+ * See LICENCE.txt for licence details.
+ */
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import namespace="urn:magento:framework:View/Layout/etc/elements.xsd"
+               schemaLocation="urn:magento:framework:View/Layout/etc/elements.xsd"/>
+
+    <xs:redefine schemaLocation="urn:magento:framework:View/Layout/etc/elements.xsd">
+        <xs:complexType name="containerType">
+            <xs:complexContent>
+                <xs:extension base="containerType">
+                    <xs:attribute name="ifconfig" type="xs:string" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="containerReferenceType">
+            <xs:complexContent>
+                <xs:extension base="containerReferenceType">
+                    <xs:attribute name="ifconfig" type="xs:string" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="blockReferenceType">
+            <xs:complexContent>
+                <xs:extension base="blockReferenceType">
+                    <xs:attribute name="ifconfig" type="xs:string" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:redefine>
+</xs:schema>
